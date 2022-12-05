@@ -1,0 +1,17 @@
+*.py[cod]
+.pytest_cache
+
+dist/
+*.egg-info/
+
+.idea
+.vscode
+
+.env
+
+**/coverage.xml
+**/.coverage.xml
+.coverage*
+report.xml
+
+.swp
