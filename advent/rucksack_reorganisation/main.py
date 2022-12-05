@@ -6,7 +6,7 @@ HIGHER = {c: i for i, c in enumerate(string.ascii_uppercase, start=27)}
 PRIORITIES = LOWER | HIGHER
 
 
-def main(name: str):
+def main(name: str) -> None:
     input_file = Path(name)
     input_text = input_file.read_text()
     total = 0
@@ -23,5 +23,5 @@ def main(name: str):
     print(f"{' ':>25}    {' ':<25}      {total}")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main("input.txt")

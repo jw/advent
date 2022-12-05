@@ -15,4 +15,3 @@ def test_rpc_example_two():
 
 def test_rpc_complete_two():
     assert main_two("test_2.txt") == 33
-

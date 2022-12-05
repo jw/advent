@@ -20,7 +20,6 @@ SCORE_TABLE_ONE = {
     ("B", "X"): ROCK + LOSS,
     # Scissors < Paper: C Y
     ("C", "Y"): PAPER + LOSS,
-
     # draws
     # Rock = Rock: A X
     ("A", "X"): ROCK + DRAW,
@@ -28,7 +27,6 @@ SCORE_TABLE_ONE = {
     ("B", "Y"): PAPER + DRAW,
     # Scissors = Scissors: C Z
     ("C", "Z"): SCISSORS + DRAW,
-
     # wins
     # Rock > Paper: A Y
     ("A", "Y"): PAPER + WIN,
@@ -54,7 +52,6 @@ SCORE_TABLE_TWO = {
     ("B", "X"): ROCK + LOSS,
     # Scissors Lose: C Paper
     ("C", "X"): PAPER + LOSS,
-
     # draw
     # Rock Draw: A Rock
     ("A", "Y"): ROCK + DRAW,
@@ -62,7 +59,6 @@ SCORE_TABLE_TWO = {
     ("B", "Y"): PAPER + DRAW,
     # Scissors Draw: C Scissors
     ("C", "Y"): SCISSORS + DRAW,
-
     # wins
     # Rock Win: A Paper
     ("A", "Z"): PAPER + WIN,
@@ -73,7 +69,7 @@ SCORE_TABLE_TWO = {
 }
 
 
-def main_one(name: str):
+def main_one(name: str) -> int:
     input_file = Path(name)
     input_text = input_file.read_text()
     score = 0
@@ -84,7 +80,7 @@ def main_one(name: str):
     return score
 
 
-def main_two(name: str):
+def main_two(name: str) -> int:
     input_file = Path(name)
     input_text = input_file.read_text()
     score = 0
@@ -95,5 +91,5 @@ def main_two(name: str):
     return score
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main_two("input.txt")
