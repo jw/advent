@@ -6,7 +6,7 @@ HIGHER = {c: i for i, c in enumerate(string.ascii_uppercase, start=27)}
 PRIORITIES = LOWER | HIGHER
 
 
-def main(name: str) -> None:
+def main_one(name: str) -> None:
     input_file = Path(name)
     input_text = input_file.read_text()
     total = 0
@@ -23,5 +23,21 @@ def main(name: str) -> None:
     print(f"{' ':>25}    {' ':<25}      {total}")
 
 
+def main_two(name: str) -> None:
+    input_file = Path(name)
+    input_text = input_file.read_text()
+    total = 0
+    lines = input_text.split("\n")
+    for i, (one, two, three) in enumerate(
+        [lines[i : i + 3] for i in range(0, len(lines), 3)]
+    ):
+        common = list(set(one) & set(two) & set(three))[0]
+        priority = PRIORITIES[common]
+        print(f"{i * 3:03}-{i * 3 + 2:03}: {common} -> {priority:02}.")
+        total = total + priority
+    print()
+    print(f"{' ':>14}{total}")
+
+
 if __name__ == "__main__":
-    main("input.txt")
+    main_two("input.txt")

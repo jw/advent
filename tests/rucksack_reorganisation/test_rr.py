@@ -1,5 +1,5 @@
-from advent.rucksack_reorganisation.main import main
+from advent.rucksack_reorganisation.main import main_one
 
 
 def test_rr_example():
-    assert main("test.txt") == 157
+    assert main_one("test.txt") == 157
